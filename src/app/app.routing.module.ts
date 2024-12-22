@@ -27,25 +27,6 @@ export const APP_ROUTES: Route[] = [
             (m) => m.AddContactsModule
           ),
       },
-
-    //   {
-    //     path: 'detention',
-    //     loadChildren: () =>
-    //       import('@cargo-visibility/features/pages/detention').then(
-    //         (m) => m.DetentionModule
-    //       ),
-    //     data: { breadcrumb: 'Detention' },
-    //     canActivate: [IsLoggedInGuard],
-    //   },
-    //   {
-    //     path: 'sms-notifications',
-    //     loadChildren: () =>
-    //       import('@cargo-visibility/features/pages/sms-notifications').then(
-    //         (m) => m.SmsNotificationsModule
-    //       ),
-    //       data: { breadcrumb: 'SMS Notifications' },
-    //       canActivate: [IsLoggedInGuard],
-    //   }
     ],
   },
 
