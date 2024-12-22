@@ -8,49 +8,46 @@ export const APP_ROUTES: Route[] = [
   { path: '', redirectTo: 'phonebook', pathMatch: 'full' },
 
 
-  // {
-  //   path: 'phonebook',
-  //   component: LayoutWrapperComponent,
-  //   children: [
-  //     {
-  //       path: 'home',
-  //       loadChildren: () =>
-  //         import('@cargo-visibility/features/pages/home').then(
-  //           (m) => m.HomeModule
-  //         ),
-  //       canActivate: [IsLoggedInGuard],
-  //     },
+  {
+    path: 'phonebook',
+    component: LayoutWrapperComponent,
+    children: [
+      {
+        path: 'contact-list',
+        loadChildren: () =>
+          import('@phonebook/contact-list').then(
+            (m) => m.ContactListModule
+          ),
+    
+      },
+      {
+        path: 'add-contact',
+        loadChildren: () =>
+          import('@phonebook/add-contacts').then(
+            (m) => m.AddContactsModule
+          ),
+      },
 
-  //     {
-  //       path: 'trips',
-  //       loadChildren: () =>
-  //         import('@cargo-visibility/features/pages/trips').then(
-  //           (m) => m.TripsModule
-  //         ),
-  //       data: { breadcrumb: 'Trips' },
-  //       canActivate: [IsLoggedInGuard],
-  //     },
-
-  //     {
-  //       path: 'detention',
-  //       loadChildren: () =>
-  //         import('@cargo-visibility/features/pages/detention').then(
-  //           (m) => m.DetentionModule
-  //         ),
-  //       data: { breadcrumb: 'Detention' },
-  //       canActivate: [IsLoggedInGuard],
-  //     },
-  //     {
-  //       path: 'sms-notifications',
-  //       loadChildren: () =>
-  //         import('@cargo-visibility/features/pages/sms-notifications').then(
-  //           (m) => m.SmsNotificationsModule
-  //         ),
-  //         data: { breadcrumb: 'SMS Notifications' },
-  //         canActivate: [IsLoggedInGuard],
-  //     }
-  //   ],
-  // },
+    //   {
+    //     path: 'detention',
+    //     loadChildren: () =>
+    //       import('@cargo-visibility/features/pages/detention').then(
+    //         (m) => m.DetentionModule
+    //       ),
+    //     data: { breadcrumb: 'Detention' },
+    //     canActivate: [IsLoggedInGuard],
+    //   },
+    //   {
+    //     path: 'sms-notifications',
+    //     loadChildren: () =>
+    //       import('@cargo-visibility/features/pages/sms-notifications').then(
+    //         (m) => m.SmsNotificationsModule
+    //       ),
+    //       data: { breadcrumb: 'SMS Notifications' },
+    //       canActivate: [IsLoggedInGuard],
+    //   }
+    ],
+  },
 
   { path: '**', redirectTo: 'home' },
 ];

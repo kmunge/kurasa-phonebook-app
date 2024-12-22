@@ -11,8 +11,8 @@ import { AppRoutingModule } from './app.routing.module';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireFunctionsModule } from '@angular/fire/compat/functions';
 import { environment } from '../environments/environment';
-import { PagePhonebookModule } from 'page-phonebook';
 import { LayoutWrapperComponent } from './components/layout-wrapper/layout-wrapper.component';
+import { PagePhonebookModule } from 'page-phonebook';
 
 
 @NgModule({
@@ -30,7 +30,7 @@ import { LayoutWrapperComponent } from './components/layout-wrapper/layout-wrapp
      AngularFirestoreModule,
      AngularFireFunctionsModule,
 
-     PagePhonebookModule,
+    PagePhonebookModule,
     ],
 
   providers: [],

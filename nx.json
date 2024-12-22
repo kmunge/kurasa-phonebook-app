@@ -31,6 +31,11 @@
         "{workspaceRoot}/.eslintignore",
         "{workspaceRoot}/eslint.config.cjs"
       ]
+    },
+    "@nx/angular:ng-packagr-lite": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
     }
   },
   "defaultBase": "main",

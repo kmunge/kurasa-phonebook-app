@@ -12,6 +12,16 @@
     "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@phonebook/add-contacts": ["libs/features/add-contacts/src/index.ts"],
+      "@phonebook/contact-details": [
+        "libs/features/contact-details/src/index.ts"
+      ],
+      "@phonebook/contact-list": [
+        "libs/features/contact-list/contact-list/src/index.ts"
+      ],
+      "@phonebook/search-contact": [
+        "libs/features/search-contact/src/index.ts"
+      ],
       "page-phonebook": ["libs/elements/page-phonebook/src/index.ts"]
     }
   }
