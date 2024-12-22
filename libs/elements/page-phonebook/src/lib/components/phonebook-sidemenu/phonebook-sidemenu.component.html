@@ -1,0 +1,38 @@
+<div 
+  class="fixed inset-0 bg-black bg-opacity-50 z-10" 
+  *ngIf="isMenuOpen$ | async" 
+  (click)="close()" 
+  (keydown.enter)="close()" 
+  tabindex="0">
+</div>
+
+<div 
+  class="fixed top-0 left-0 w-64 h-screen bg-white-500 text-white z-20 flex flex-col p-4" 
+  *ngIf="isMenuOpen$ | async as isMenuOpen" 
+  (click)="$event.stopPropagation()" tabindex="0" (keydown.enter)="$event.stopPropagation()">
+  
+  <!-- Header -->
+  <div class="flex justify-end items-center mb-5">
+    <span class="text-2xl cursor-pointer" tabindex="0" (click)="close()" (keydown.enter)="close()">&times;</span>
+  </div>
+
+  <!-- Side Menu Content -->
+  <div>
+    <!-- Sidenav Header -->
+    <div class="p-4 bg-teal-500">
+      <img src="/assets/images/Cargo Beige.png" alt="Phone Book" class="w-full">
+    </div>
+
+    <!-- Menu Items -->
+    <nav class="flex-grow">
+      <div class="mb-5 flex items-center cursor-pointer" tabindex="0" (click)="navigateTo(pages.ADD_CONTACT)" (keydown.enter)="navigateTo(pages.ADD_CONTACT)" (keyup.enter)="navigateTo(pages.ADD_CONTACT)">
+        <img src="/assets/svgs/MDI - map-marker-multiple-outline.svg" alt="Trips Icon" class="w-5 h-5 mr-3">
+        <span class="text-sm font-thin">Add Contact</span>
+      </div>
+      <div class="mb-5 flex items-center cursor-pointer" tabindex="0" (click)="navigateTo(pages.CONTACT_LIST)" (keydown.enter)="navigateTo(pages.ADD_CONTACT)" (keyup.enter)="navigateTo(pages.ADD_CONTACT)">
+        <img src="/assets/svgs/MDI - map-marker-multiple-outline.svg" alt="Trips Icon" class="w-5 h-5 mr-3">
+        <span class="text-sm font-thin">Contact List</span>
+      </div>
+    </nav>
+  </div>
+</div>
