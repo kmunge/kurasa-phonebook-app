@@ -5,7 +5,6 @@ import { SubSink } from 'subsink';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { PhonebookPages } from '../../models/phonebook-pages.enum';
 import { ElementRef } from '@angular/core';
-import { PhonebookSidemenuComponent } from "../phonebook-sidemenu/phonebook-sidemenu.component";
 
 @Component({
   selector: 'lib-app-page',
@@ -56,8 +55,8 @@ export class PhonebookPageComponent implements OnInit, OnDestroy {
   }
 
   navigateTo(page: PhonebookPages): void {
-    this.router.navigate([page]);
-
+    this.router.navigate([`/phonebook/${page}`]); // Include the '/phonebook/' prefix
+  
     switch (page) {
       case PhonebookPages.CONTACT_LIST:
         this.title = 'Contact List';
@@ -69,12 +68,11 @@ export class PhonebookPageComponent implements OnInit, OnDestroy {
         this.title = 'Contacts';
         break;
     }
-    // this.mobileRepPages.showPage(page);
-  }
+  }  
 
-  initInitialPage(){
-    this.router.navigate([PhonebookPages.CONTACT_LIST]);
-  }
+  initInitialPage(): void {
+    this.router.navigate([`/phonebook/${PhonebookPages.CONTACT_LIST}`]);
+  }  
 
   onMenuToggle(isOpen: boolean): void {
     this.toggleSideNav$.next(isOpen); // Update the drawer state
