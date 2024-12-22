@@ -1,0 +1,29 @@
+<div class="p-4 max-w-5xl mx-auto">
+    <!-- Toggle View Button -->
+    <div class="flex justify-between items-center mb-4">
+      <button (click)="toggleView()" class="bg-gray-200 p-2 rounded">
+        {{ isGridView ? 'Switch to List View' : 'Switch to Grid View' }}
+      </button>
+    </div>
+  
+    <!-- Loading Message -->
+    <div *ngIf="contacts.length === 0" class="text-center text-gray-500">
+        <p *ngIf="!errorMessage">No contacts available.</p>
+        <p *ngIf="errorMessage" class="text-red-500">Error: {{ errorMessage }}</p>
+      </div>      
+  
+    <!-- Contacts Display -->
+    <div [ngClass]="isGridView ? 'grid grid-cols-3 gap-4' : 'space-y-4'">
+      <div *ngFor="let contact of contacts" class="p-4 border rounded shadow">
+        <img
+          [src]="contact.imageUrl || 'https://via.placeholder.com/150'"
+          alt="Contact Image"
+          class="w-16 h-16 rounded-full mb-2"
+        />
+        <h3 class="text-lg font-medium">{{ contact.firstName }} {{ contact.lastName }}</h3>
+        <p>{{ contact.email }}</p>
+        <p>{{ contact.phoneNumber }}</p>
+        <a [routerLink]="['/contacts', contact.id]" class="text-blue-500 underline">View Details</a>
+      </div>
+    </div>
+  </div>  
