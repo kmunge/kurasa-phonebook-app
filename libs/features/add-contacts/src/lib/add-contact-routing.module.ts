@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Route, RouterModule } from '@angular/router';
-import { AddContactsComponent } from './add-contacts.component';
+import { AddContactsComponent } from './components/add-contacts/add-contacts.component';
 
 
 const HOME_ROUTES: Route[] = [
