@@ -1,6 +1,20 @@
-<div class="font-sans max-w-md mx-auto bg-white w-screen h-16 flex items-center px-7">
-    <header class="flex items-center w-full">
-      <img [src]="image" width="24" height="24" class="text-white cursor-pointer" (click)="toggleMenu()" (keydown)="handleKeydown($event)" tabindex="0" alt="Menu icon">
-      <h1 class="text-left flex-1 text-black text-lg font-bold"> {{title}} </h1>
-    </header>
-  </div>
+<div class="font-sans max-w-full mx-auto bg-white w-full h-16 flex items-center px-6 sm:px-8 shadow-md">
+  <header class="flex items-center w-full">
+    <!-- Menu Icon -->
+    <img 
+      [src]="image" 
+      width="24" 
+      height="24" 
+      class="text-black cursor-pointer" 
+      (click)="toggleMenu()" 
+      (keydown)="handleKeydown($event)" 
+      tabindex="0" 
+      alt="Menu icon"
+    />
+    
+    <!-- Title -->
+    <h1 class="flex-1 text-left text-black text-xl sm:text-2xl font-bold truncate">
+      {{ title }}
+    </h1>
+  </header>
+</div>
