@@ -1,7 +1,19 @@
 {
-    "build": {
-        "env": {
-            "NPM_FLAGS": "--legacy-peer-deps"
-        }
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "buildCommand": "npx nx build kurasa-phonebook-app --configuration=production",
+        "outputDirectory": "dist/kurasa-phonebook-app"
+      }
     }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
 }
