@@ -12,8 +12,8 @@
     "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@phonebook/add-contacts": ["libs/features/add-contacts/src/index.ts"],
-      "@phonebook/contact-details": [
+      "add-contacts": ["libs/features/add-contacts/src/index.ts"],
+      "contact-details": [
         "libs/features/contact-details/src/index.ts"
       ],
       "@phonebook/contact-list": [

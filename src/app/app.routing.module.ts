@@ -23,7 +23,7 @@ export const APP_ROUTES: Route[] = [
       {
         path: 'add-contact',
         loadChildren: () =>
-          import('@phonebook/add-contacts').then(
+          import('add-contacts').then(
             (m) => m.AddContactsModule
           ),
       },
