@@ -27,6 +27,13 @@ export const APP_ROUTES: Route[] = [
             (m) => m.AddContactsModule
           ),
       },
+      // {
+      //   path: 'contact-details',
+      //   loadChildren: () =>
+      //     import('@phonebook/contact-details').then(
+      //       (m) => m.ContactDetailsModule
+      //     ),
+      // }
     ],
   },
 
