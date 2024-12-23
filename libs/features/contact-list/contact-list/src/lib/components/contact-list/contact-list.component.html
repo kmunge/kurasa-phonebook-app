@@ -13,7 +13,7 @@
   <div class="flex mb-4">
     <button
       (click)="toggleView()"
-      class="flex right-20 bg-purple-600 text-white p-3 rounded-full shadow-md hover:bg-purple-700 transition duration-300 flex items-center justify-center"
+      class="flex right-20 bg-purple-300 text-white p-3 rounded-full shadow-md hover:bg-purple-700 transition duration-300 flex items-center justify-center"
     >
       <svg
         *ngIf="isGridView"
@@ -172,7 +172,7 @@
   <!-- Search Button -->
   <button
     (click)="toggleSearch()"
-    class="fixed bottom-20 right-20 bg-purple-500 text-white p-4 rounded-full shadow-lg"
+    class="fixed bottom-20 right-20 bg-purple-300 text-white p-4 rounded-full shadow-lg"
   >
     <span *ngIf="!isSearchVisible" class="material-icons">search</span>
     <span *ngIf="isSearchVisible" class="material-icons">close</span>
