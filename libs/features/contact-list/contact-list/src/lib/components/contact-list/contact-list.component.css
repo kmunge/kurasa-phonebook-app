@@ -54,3 +54,15 @@
   .underline {
     text-decoration: underline;
   }  
+
+  .cursor-pointer {
+  cursor: pointer;
+}
+
+.cursor-pointer:hover {
+  background-color: #f9f9f9;
+}
+
+.border-b {
+  border-bottom: 1px solid #e5e5e5;
+}
