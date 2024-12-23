@@ -58,11 +58,11 @@ export class ContactListComponent implements OnInit {
 
   filterContacts() {
     this.filteredContacts = this.contacts.filter((contact) =>
-      `${contact.firstName} ${contact.lastName}`
+      `${contact.firstName} ${contact.lastName} ${contact.email} ${contact.phoneNumber}`
         .toLowerCase()
         .includes(this.searchTerm.toLowerCase())
     );
-  }
+  }  
 
   editContact(contactId: string) {
     this.editingContactId = contactId;
