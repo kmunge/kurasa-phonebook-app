@@ -1,0 +1,19 @@
+<div *ngIf="contact; else loading">
+  <img
+    [src]="contact.imageUrl || 'https://via.placeholder.com/150'"
+    alt="Contact Image"
+    class="w-16 h-16 rounded-full mb-2"
+  />
+  <h3 class="text-lg font-medium">
+    {{ contact.firstName }} {{ contact.lastName }}
+  </h3>
+  <p><strong>Email:</strong> {{ contact.email }}</p>
+  <p><strong>Phone:</strong> {{ contact.phoneNumber }}</p>
+  <p><strong>Address:</strong> {{ contact.address }}</p>
+  <p *ngIf="contact.group"><strong>Group:</strong> {{ contact.group }}</p>
+</div>
+<button (click)="goBack()" class="text-blue-500 underline">Back to List</button>
+
+<ng-template #loading>
+  <p>Loading contact details...</p>
+</ng-template>
