@@ -1,3 +1,4 @@
+<!-- Overlay background -->
 <div 
   class="fixed inset-0 bg-black bg-opacity-50 z-10" 
   *ngIf="isMenuOpen$ | async" 
@@ -6,32 +7,39 @@
   tabindex="0">
 </div>
 
+<!-- Side Menu -->
 <div 
-  class="fixed top-0 left-0 w-64 h-screen bg-white-500 text-white z-20 flex flex-col p-4" 
+  class="fixed top-0 left-0 w-64 h-screen bg-white shadow-lg z-20 flex flex-col p-6" 
   *ngIf="isMenuOpen$ | async as isMenuOpen" 
   (click)="$event.stopPropagation()" tabindex="0" (keydown.enter)="$event.stopPropagation()">
   
-  <!-- Header -->
-  <div class="flex justify-end items-center mb-5">
-    <span class="text-2xl cursor-pointer" tabindex="0" (click)="close()" (keydown.enter)="close()">&times;</span>
+  <!-- Header (Close Button) -->
+  <div class="flex justify-end items-center mb-8">
+    <span class="text-3xl text-gray-700 cursor-pointer hover:text-gray-900" tabindex="0" (click)="close()" (keydown.enter)="close()">&times;</span>
   </div>
 
   <!-- Side Menu Content -->
-  <div>
+  <div class="flex flex-col space-y-5">
     <!-- Sidenav Header -->
-    <div class="p-4 bg-teal-500">
-      <img src="/assets/images/Cargo Beige.png" alt="Phone Book" class="w-full">
+    <div class="mb-8 bg-purple-300 rounded-lg shadow-lg">
+      <span class="text-sm font-medium text-gray-700">Phone Book</span>
+      <img src="assets/svgs/phone-book.svg" alt="Phone Book" class="w-full h-32 object-cover rounded-t-lg">
     </div>
 
     <!-- Menu Items -->
-    <nav class="flex-grow">
-      <div class="mb-5 flex items-center cursor-pointer" tabindex="0" (click)="navigateTo(pages.ADD_CONTACT)" (keydown.enter)="navigateTo(pages.ADD_CONTACT)" (keyup.enter)="navigateTo(pages.ADD_CONTACT)">
-        <img src="/assets/svgs/MDI - map-marker-multiple-outline.svg" alt="Trips Icon" class="w-5 h-5 mr-3">
-        <span class="text-sm font-thin">Add Contact</span>
+    <nav class="flex-grow space-y-5">
+      <div class="flex items-center cursor-pointer hover:bg-purple-100 p-3 rounded-md" tabindex="0" (click)="navigateTo(pages.ADD_CONTACT)" (keydown.enter)="navigateTo(pages.ADD_CONTACT)" (keyup.enter)="navigateTo(pages.ADD_CONTACT)">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-purple-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+        </svg>
+        <span class="text-sm font-medium text-gray-700">Add Contact</span>
       </div>
-      <div class="mb-5 flex items-center cursor-pointer" tabindex="0" (click)="navigateTo(pages.CONTACT_LIST)" (keydown.enter)="navigateTo(pages.ADD_CONTACT)" (keyup.enter)="navigateTo(pages.ADD_CONTACT)">
-        <img src="/assets/svgs/MDI - map-marker-multiple-outline.svg" alt="Trips Icon" class="w-5 h-5 mr-3">
-        <span class="text-sm font-thin">Contact List</span>
+
+      <div class="flex items-center cursor-pointer hover:bg-purple-100 p-3 rounded-md" tabindex="0" (click)="navigateTo(pages.CONTACT_LIST)" (keydown.enter)="navigateTo(pages.CONTACT_LIST)" (keyup.enter)="navigateTo(pages.CONTACT_LIST)">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-purple-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h6l3 14h6" />
+        </svg>
+        <span class="text-sm font-medium text-gray-700">Contact List</span>
       </div>
     </nav>
   </div>
