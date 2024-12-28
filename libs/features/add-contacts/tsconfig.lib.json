@@ -1,17 +1,26 @@
 {
-  "extends": "./tsconfig.json",
+  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "../../../dist/out-tsc",
+    "outDir": "../../dist/out-tsc",
+    "target": "es2015",
+    "module": "es2020",
+    "rootDir": "./src",
     "declaration": true,
     "declarationMap": true,
-    "inlineSources": true,
-    "types": []
+    "sourceMap": true
   },
-  "exclude": [
-    "src/**/*.spec.ts",
-    "src/test-setup.ts",
-    "jest.config.ts",
-    "src/**/*.test.ts"
+  "angularCompilerOptions": {
+    "annotateForClosureCompiler": true,
+    "skipTemplateCodegen": false,
+    "strictMetadataEmit": true
+  },
+  "include": [
+    "src/**/*.ts",
+    "../../libs/models/contact-model/**/*.ts",
+    "../../libs/service/contacts-service/**/*.ts"
   ],
-  "include": ["src/**/*.ts"]
+  "exclude": [
+    "src/test.ts",
+    "**/*.spec.ts"
+  ]
 }
