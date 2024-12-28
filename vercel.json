@@ -1,7 +1,17 @@
 {
     "build": {
-        "env": {
-            "NPM_FLAGS": "--legacy-peer-deps"
-        }
-    }
-}
+      "env": {
+        "NPM_FLAGS": "--legacy-peer-deps"
+      }
+    },
+    "devCommand": "npm start",
+    "framework": "angular",
+    "outputDirectory": "dist/kurasa-phonebook-app",
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "/index.html"
+      }
+    ]
+  }
+  
