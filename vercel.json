@@ -1,17 +1,14 @@
-{
-    "build": {
-      "env": {
-        "NPM_FLAGS": "--legacy-peer-deps"
+  {
+    "builds": [
+      {
+        "src": "dist/kurasa-phonebook-app/**/*",
+        "use": "@vercel/static"
       }
-    },
-    "devCommand": "npm start",
-    "framework": "angular",
-    "outputDirectory": "dist/kurasa-phonebook-app",
+    ],
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "/index.html"
+        "dest": "/dist/kurasa-phonebook-app/$1"
       }
     ]
   }
-  
