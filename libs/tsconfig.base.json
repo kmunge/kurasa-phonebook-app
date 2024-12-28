@@ -1,0 +1,29 @@
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+      "sourceMap": true,
+      "declaration": false,
+      "moduleResolution": "bundler",
+      "experimentalDecorators": true,
+      "importHelpers": true,
+      "target": "ES2022",
+      "module": "ES2022",
+      "lib": ["ES2022", "dom"],
+      "skipLibCheck": true,
+      "baseUrl": ".",
+      "rootDir": ".",
+      "outDir": "dist",
+      "paths": {
+        "@phonebook/search-contact": [
+          "libs/features/search-contact/src/index.ts"
+        ],
+        "add-contacts": ["libs/features/add-contacts/src/index.ts"],
+        "contacts-list": ["libs/features/contacts-list/src/index.ts"],
+        "page-phonebook": ["libs/elements/page-phonebook/src/index.ts"]
+      }
+    },
+    "include": ["libs/**/*", "apps/**/*"],
+    "exclude": [
+      "**/*.ngtypecheck.ts"
+  ],
+  }  

@@ -54,7 +54,6 @@
       "!{projectRoot}/eslint.config.cjs"
     ]
   },
-  "nxCloudId": "676632eed56afe22e5877c39",
   "generators": {
     "@nx/angular:library": {
       "linter": "eslint",

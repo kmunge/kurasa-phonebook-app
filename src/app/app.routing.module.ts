@@ -15,8 +15,8 @@ export const APP_ROUTES: Route[] = [
       {
         path: 'contact-list',
         loadChildren: () =>
-          import('@phonebook/contact-list').then(
-            (m) => m.ContactListModule
+          import('contacts-list').then(
+            (m) => m.ContactsListModule
           ),
     
       },

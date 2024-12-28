@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ContactsService } from 'libs/state/services/contact.service';
-import { Contact } from 'libs/models/contact.model';
+
+import { ContactsService } from '../../service/contact.service';
+import { Contact } from '../../models/contact.model';
+
 
 @Component({
   selector: 'app-add-contact',
@@ -10,10 +12,10 @@ import { Contact } from 'libs/models/contact.model';
 })
 export class AddContactsComponent {
   contactForm: FormGroup;
-  isLoading = false; // Track loading state
+  isLoading = false; 
   successMessage: string | null = null; // Success message
-  selectedImage: File | null = null; // Track the uploaded image file
-  imageError: string | null = null; // Track image validation errors
+  selectedImage: File | null = null; //  uploaded image file
+  imageError: string | null = null; // image validation errors
 
   constructor(
     private fb: FormBuilder,

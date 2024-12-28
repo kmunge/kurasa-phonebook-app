@@ -11,18 +11,17 @@
     "lib": ["ES2022", "dom"],
     "skipLibCheck": true,
     "baseUrl": ".",
+    "rootDir": ".",
+    "outDir": "dist",
     "paths": {
-      "add-contacts": ["libs/features/add-contacts/src/index.ts"],
-      "contact-details": [
-        "libs/features/contact-details/src/index.ts"
-      ],
-      "@phonebook/contact-list": [
-        "libs/features/contact-list/contact-list/src/index.ts"
-      ],
       "@phonebook/search-contact": [
         "libs/features/search-contact/src/index.ts"
       ],
+      "add-contacts": ["libs/features/add-contacts/src/index.ts"],
+      "contacts-list": ["libs/features/contacts-list/src/index.ts"],
       "page-phonebook": ["libs/elements/page-phonebook/src/index.ts"]
     }
-  }
+  },
+  "include": ["libs/**/*", "apps/**/*"],
+  "exclude": ["**/*.ngtypecheck.ts"]
 }
