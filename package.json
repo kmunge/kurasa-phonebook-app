@@ -6,6 +6,7 @@
     "start": "nx serve",
     "build": "nx build",
     "watch": "nx build --watch --configuration development",
+    "dev": "nx serve",
     "test": "nx test"
   },
   "private": true,
